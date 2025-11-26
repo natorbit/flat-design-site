@@ -1,82 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Flat Design – History</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flat Design History</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/script.js"></script>
 </head>
+
 <body>
+  <!-- header include / markup -->
+  <header class="header">
+    <div class="logo">FLAT ARCHIVE</div>
 
-<header class="site-header">
-  <div class="logo">Flat Design Archive</div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="history.html">History</a>
-    <a href="examples.html">Examples</a>
-  </nav>
-  <button class="hamburger" id="hamburgerBtn">&#9776;</button>
-</header>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="history.html">History</a>
+      <a href="examples.html">Examples</a>
+    </nav>
 
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="history.html">History</a>
-  <a href="examples.html">Examples</a>
-</nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-<main class="history-page">
+  <main class="content">
 
-  <h1>History of Flat Design</h1>
+    <!-- centered page header with subtitle -->
+    <section class="page-header">
+      <h1>History of Flat Design</h1>
+      <p class="subtitle">
+        Flat design has evolved from earlier design principles into the popular aesthetic we see today.
+        Here is a brief timeline:
+      </p>
+    </section>
 
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>1940s — Swiss Style</h3>
-        <p>Dominates visual design with grids, sans-serif typography, and minimalism.</p>
+    <!-- Responsive vertical timeline -->
+    <section class="timeline-vertical">
+      <div class="timeline-entry">
+        <div class="dot"></div>
+        <div class="box">
+          <h2>1940s — Swiss Style</h2>
+          <p>
+            Dominates the scene with grids, sans-serif typography, and clean hierarchy.
+            Heavily influenced by minimalism.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2006 — Microsoft Zune</h3>
-        <p>Large lowercase typography and bold backgrounds influence future UI trends.</p>
+      <div class="timeline-entry">
+        <div class="dot"></div>
+        <div class="box">
+          <h2>2006 — Microsoft Zune</h2>
+          <p>
+            Releases Zune media player — large, lowercase typography and background imagery.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2010 — Windows Phone 7</h3>
-        <p>Bright tiles, sans-serif type, flat icons. Introduces “Metro” design.</p>
+      <div class="timeline-entry">
+        <div class="dot"></div>
+        <div class="box">
+          <h2>2010 — Windows Phone 7</h2>
+          <p>
+            Large, bright grids, sans-serif, flat icons. Dubbed "Metro" design.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2012 — Windows 8</h3>
-        <p>Metro showcased in full: sharp edges, block grids, bright color.</p>
+      <div class="timeline-entry">
+        <div class="dot"></div>
+        <div class="box">
+          <h2>2012 — Windows 8</h2>
+          <p>
+            Metro design in full: block grid layout, sharp edges, bright colours and large background images.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2013 — Apple iOS 7</h3>
-        <p>Apple moves away from skeuomorphism. Flat design becomes industry standard.</p>
+      <div class="timeline-entry">
+        <div class="dot"></div>
+        <div class="box">
+          <h2>2013 — Apple iOS 7</h2>
+          <p>
+            Apple releases iOS 7 — flat design helps replace skeuomorphic approaches; skeuomorphism quickly becomes outdated.
+          </p>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <!-- footer include / markup -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-title">Flat Design Archive</p>
+      <p class="footer-credit">Created by <strong>Natasha Caraos</strong></p>
     </div>
+  </footer>
 
-  </div>
-</main>
-
-<footer class="site-footer">
-  Flat Design • Natasha Caraos
-</footer>
-
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
