@@ -2,37 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flat Design – Examples</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flat Design Examples</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="logo">Flat Design Archive</div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="history.html">History</a>
-    <a href="examples.html">Examples</a>
-  </nav>
-  <button class="hamburger" id="hamburgerBtn">&#9776;</button>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Flat Design Archive</div>
 
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="history.html">History</a>
-  <a href="examples.html">Examples</a>
-</nav>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="examples.html" class="active">Examples</a></li>
+      </ul>
+    </nav>
 
-<main class="examples-page">
-  <h1>Examples of Flat Design</h1>
-  <p>Show images, UI screenshots, or examples here.</p>
-</main>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
 
-<footer class="site-footer">
-  Flat Design • Natasha Caraos
-</footer>
+  <!-- EXAMPLES -->
+  <section class="examples-header">
+    <h1>Examples of Flat Design</h1>
+    <p>Here are modern uses of flat design in branding, UI, and digital layouts.</p>
+  </section>
 
-<script src="js/script.js"></script>
+  <section class="examples-grid">
+
+    <div class="example-card">
+      <img src="img/example1.png" alt="">
+      <h3>Minimal UI Layout</h3>
+    </div>
+
+    <div class="example-card">
+      <img src="img/example2.png" alt="">
+      <h3>Color Block Poster</h3>
+    </div>
+
+    <div class="example-card">
+      <img src="img/example3.png" alt="">
+      <h3>Mobile App Screen</h3>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Flat Design • Created by Natasha Caraos
+  </footer>
+
 </body>
 </html>

@@ -1,7 +1,8 @@
-const hamburgerBtn = document.getElementById("hamburgerBtn");
-const mobileMenu = document.getElementById("mobileMenu");
+// Mobile Navigation
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
 
-hamburgerBtn.addEventListener("click", () => {
-  mobileMenu.style.display =
-    mobileMenu.style.display === "flex" ? "none" : "flex";
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+  hamburger.classList.toggle("open");
 });
