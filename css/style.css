@@ -1,264 +1,352 @@
+/* ----------------------------------------------------
+ * FLAT DESIGN ARCHIVE - COMPLETE STYLE SHEET
+ * ---------------------------------------------------- */
+
 /* ------------------------------
-   GENERAL RESET + BASE
------------------------------- */
+ * 🎨 CSS Variables for Color and Typography
+ * These make the file easy to maintain and change schemes later.
+ * ------------------------------ */
+:root {
+    /* Colors */
+    --color-primary: #4aa8ff;       /* Main Blue (Buttons, Timeline dots, Links) */
+    --color-secondary: #e5e5e5;     /* Light Gray (Borders, Grey Buttons) */
+    --color-background-light: #f7f7f7; /* Body background */
+    --color-background-white: #ffffff; /* Header/Card/Hero background */
+    --color-text-dark: #222;        /* Dark text color */
+    --color-text-light: #ffffff;    /* White text color */
+
+    /* Typography */
+    --font-family-base: "Inter", sans-serif;
+    --spacing-base: 1.6;
+}
+
+
+/* ------------------------------
+ * 📐 GENERAL RESET + BASE
+ * ------------------------------ */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background: #f7f7f7;
-  color: #222;
-  line-height: 1.6;
-  padding-bottom: 4rem;
+    font-family: var(--font-family-base);
+    background: var(--color-background-light);
+    color: var(--color-text-dark);
+    line-height: var(--spacing-base);
+    padding-bottom: 4rem;
 }
 
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease; /* Smooth link color change */
 }
 
+
 /* ------------------------------
-   HEADER (FLAT DESIGN)
------------------------------- */
+ * 🧱 HEADER (FLAT DESIGN)
+ * ------------------------------ */
 header {
-  background: #ffffff;
-  border-bottom: 2px solid #e5e5e5;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background: var(--color-background-white);
+    border-bottom: 2px solid var(--color-secondary);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header .logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
 }
 
 nav ul li a {
-  font-weight: 600;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+/* Flat design hover/active feedback */
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--color-primary); /* Primary blue on hover */
+}
+
+/* Underline for active state */
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
 }
 
 .hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
 }
 
 .hamburger span {
-  width: 24px;
-  height: 3px;
-  background: #222;
-  border-radius: 3px;
+    width: 24px;
+    height: 3px;
+    background: var(--color-text-dark);
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Mobile Nav */
 @media (max-width: 768px) {
-  nav ul {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: white;
-    width: 200px;
-    display: none;
-    flex-direction: column;
-    padding: 1rem;
-    border-left: 2px solid #e5e5e5;
-    border-bottom: 2px solid #e5e5e5;
-  }
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--color-background-white);
+        width: 200px;
+        display: none;
+        flex-direction: column;
+        padding: 1rem;
+        border-left: 2px solid var(--color-secondary);
+        border-bottom: 2px solid var(--color-secondary);
+        z-index: 10;
+    }
 
-  nav ul.open {
-    display: flex;
-  }
+    nav ul.open {
+        display: flex;
+    }
 
-  .hamburger {
-    display: flex;
-  }
+    .hamburger {
+        display: flex;
+    }
 }
 
+
 /* ------------------------------
-   HERO SECTION
------------------------------- */
+ * 🌟 HERO SECTION
+ * ------------------------------ */
 .hero {
-  text-align: center;
-  padding: 6rem 1rem;
-  background: #ffffff;
-  margin-bottom: 3rem;
+    text-align: center;
+    padding: 6rem 1rem;
+    background: var(--color-background-white);
+    margin-bottom: 3rem;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
-  max-width: 600px;
-  margin: 0.75rem auto 2rem;
-  font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0.75rem auto 2rem;
+    font-size: 1.1rem;
 }
 
 .hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px; /* A slight radius is modern flat */
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-block;
 }
 
 .btn-blue {
-  background: #4aa8ff;
-  color: white;
-  padding: 0.8rem 1.6rem;
-  border-radius: 6px;
-  font-weight: 600;
+    background: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.btn-blue:hover {
+    background: #3a97e6; /* Slightly darker primary color */
+    transform: translateY(-2px);
+    cursor: pointer;
 }
 
 .btn-grey {
-  background: #e5e5e5;
-  color: #222;
-  padding: 0.8rem 1.6rem;
-  border-radius: 6px;
-  font-weight: 600;
+    background: var(--color-secondary);
+    color: var(--color-text-dark);
+    border: 2px solid var(--color-secondary); /* Ensure background and border are same for flat look */
 }
 
+.btn-grey:hover {
+    background: #cacaca; /* Slightly darker secondary color */
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+
 /* ------------------------------
-   CORE PRINCIPLES SECTION
------------------------------- */
+ * 🧩 CORE PRINCIPLES SECTION
+ * ------------------------------ */
 .principles {
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 1rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
 }
 
-.principles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+.principles h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
 }
 
-.principle-box {
-  padding: 1.5rem;
-  border-radius: 10px;
-  color: white;
+.principle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
 }
 
-.box-blue { background: #4aa8ff; }
-.box-green { background: #36c98e; }
-.box-orange { background: #ff9e4a; }
-.box-pink { background: #ff5fa2; }
+.principle-card {
+    padding: 1.5rem;
+    border-radius: 0; /* Purely flat: remove radius */
+    color: var(--color-text-light);
+    transition: transform 0.3s ease;
+}
+
+.principle-card:hover {
+    transform: scale(1.03); /* Simple interaction for flat elements */
+    z-index: 2; /* Bring the hovered card forward */
+}
+
+/* Background colors are already set inline in HTML, but here are the defaults if you remove them: */
+/* .box-blue { background: #4aa8ff; } */
+/* .box-green { background: #36c98e; } */
+/* .box-orange { background: #ff9e4a; } */
+/* .box-pink { background: #ff5fa2; } */
+
 
 /* ------------------------------
-   HISTORY PAGE TITLE + SUBTITLE
------------------------------- */
+ * ⏳ HISTORY PAGE TITLE + SUBTITLE
+ * ------------------------------ */
 .history-header {
-  text-align: center;
-  padding: 4rem 1rem 2rem;
+    text-align: center;
+    padding: 4rem 1rem 2rem;
+    background: var(--color-background-white);
+    border-bottom: 1px solid var(--color-secondary);
 }
 
 .history-header h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.8rem;
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
 }
 
 .history-header p {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
+
 /* ------------------------------
-   TIMELINE (UPDATED)
------------------------------- */
+ * 🗓️ TIMELINE
+ * ------------------------------ */
 .timeline {
-  max-width: 800px;
-  margin: 3rem auto;
-  position: relative;
-  padding-left: 40px;
+    max-width: 800px;
+    margin: 3rem auto;
+    position: relative;
+    padding-left: 40px;
 }
 
 /* Vertical line */
 .timeline::before {
-  content: "";
-  position: absolute;
-  left: 20px;
-  top: 40px;        /* <-- STARTS at first dot */
-  bottom: 40px;     /* <-- ENDS at last dot */
-  width: 4px;
-  background: #d0d0d0;
-  border-radius: 4px;
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0; /* Start line at the top */
+    bottom: 0; /* Extend line to the bottom */
+    width: 4px;
+    background: var(--color-secondary); /* Use light gray for line */
+    border-radius: 4px;
 }
 
 .timeline-item {
-  margin-bottom: 3rem;
-  position: relative;
-  padding-left: 30px;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-left: 30px;
 }
 
 /* Dots */
 .timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -2px;
-  top: 4px;
-  width: 18px;
-  height: 18px;
-  background: #4aa8ff;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 0 3px #4aa8ff;
+    content: "";
+    position: absolute;
+    left: 14px; /* Move dot to center on the vertical line (20px line center - 6px dot center) */
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    border: 4px solid var(--color-background-light); /* Thick white border to lift the dot */
+    box-shadow: 0 0 0 1px var(--color-primary); /* Thin shadow border */
+    z-index: 1;
 }
 
 .timeline-year {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #4aa8ff;
-  margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 5px;
 }
 
 .timeline-content {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 2px solid #e5e5e5;
+    background: var(--color-background-white);
+    padding: 1rem;
+    border-radius: 0; /* Purely flat: remove radius */
+    border: 2px solid var(--color-secondary);
+    transition: border-color 0.3s ease;
 }
 
-/* Mobile */
+.timeline-content:hover {
+    border-color: var(--color-primary); /* Hover feedback */
+}
+
+/* Mobile for Timeline */
 @media (max-width: 600px) {
-  .timeline {
-    padding-left: 30px;
-  }
+    .timeline {
+        padding-left: 20px;
+    }
 
-  .timeline::before {
-    left: 14px;
-  }
+    .timeline::before {
+        left: 10px;
+    }
 
-  .timeline-item::before {
-    left: -6px;
-  }
+    .timeline-item::before {
+        left: 6px;
+    }
 }
+
 
 /* ------------------------------
-   FOOTER
------------------------------- */
+ * 🏁 FOOTER
+ * ------------------------------ */
 footer {
-  text-align: center;
-  padding: 2rem;
-  background: #ffffff;
-  border-top: 2px solid #e5e5e5;
-  margin-top: 4rem;
-  font-weight: 600;
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-background-white);
+    border-top: 2px solid var(--color-secondary);
+    margin-top: 4rem;
+    font-weight: 600;
+    color: #555;
 }
