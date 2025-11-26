@@ -1,20 +1,19 @@
-// Function to toggle the mobile menu visibility
+// script.js
+
+// Ensures the script runs only after the entire page (DOM) is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Get the hamburger element by its ID
+    // 1. Get the hamburger icon and the navigation list elements
     const hamburger = document.getElementById('hamburger');
-    
-    // Get the navigation menu element by its ID
     const navMenu = document.getElementById('nav-menu');
 
+    // 2. Check if both elements exist before adding the listener
     if (hamburger && navMenu) {
-        // Add a click listener to the hamburger icon
+        // 3. Add a click event listener to the hamburger icon
         hamburger.addEventListener('click', () => {
-            // Toggles the 'open' class on the navigation menu
-            // This is what the CSS uses to switch between display: none and display: flex
+            // Toggles the 'open' class on the navigation menu.
+            // The CSS @media query uses this 'open' class to switch 
+            // the menu from 'display: none' to 'display: flex'.
             navMenu.classList.toggle('open');
-            
-            // OPTIONAL: Toggle a class on the hamburger itself for animation (e.g., changing to an 'X')
-            // hamburger.classList.toggle('toggled'); 
         });
     }
 });
