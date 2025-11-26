@@ -54,16 +54,25 @@ a {
     transition: color 0.2s ease;
 }
 
+/* --- New Content Wrapper for all main content areas --- */
+.content-wrapper {
+    width: 90%; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; 
+}
+
+
 /* ------------------------------
  * 🧱 HEADER (THIN ALIGNED)
  * ------------------------------ */
 header {
     background: var(--color-background-white);
-    border-bottom: 1px solid var(--color-secondary); /* Thinner border for minimalist look */
-    padding: 10px 2rem; /* Reduced vertical padding for a thin header */
+    border-bottom: 1px solid var(--color-secondary);
+    padding: 10px 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Pushes the logo/title and nav to opposite ends */
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -76,15 +85,15 @@ header .logo {
 
 /* Navigation Links on the right */
 nav ul {
-    list-style: none; /* Crucial: removes the bullet points */
-    display: flex; /* Crucial: makes the links horizontal */
+    list-style: none;
+    display: flex;
     gap: 20px;
 }
 
 nav ul li a {
     font-weight: 600;
     padding: 0.5rem 0;
-    text-transform: uppercase; /* Match the capitalized look in the image */
+    text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
     position: relative;
@@ -92,7 +101,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: var(--color-primary); /* Primary blue on hover */
+    color: var(--color-primary);
 }
 
 /* Underline for active state */
@@ -107,7 +116,6 @@ nav ul li a.active::after {
 }
 
 .hamburger {
-    /* Style for the three lines */
     display: none;
     flex-direction: column;
     gap: 4px;
@@ -124,11 +132,10 @@ nav ul li a.active::after {
 
 /* Mobile Nav */
 @media (max-width: 768px) {
-    /* Hides the desktop navigation */
     nav ul {
         display: none;
         position: absolute;
-        top: 45px; /* Adjust based on your header's total height */
+        top: 45px;
         right: 0;
         background: var(--color-background-white);
         width: 200px;
@@ -139,12 +146,10 @@ nav ul li a.active::after {
         z-index: 10;
     }
     
-    /* JavaScript adds the 'open' class to show the menu */
     nav ul.open {
         display: flex; 
     }
     
-    /* Shows the hamburger icon */
     .hamburger {
         display: flex; 
     }
